@@ -6,16 +6,28 @@
 
 <ion-content [fullscreen]="true">
   <ion-item>
-    <ion-input [(ngModel)]="newTodo" placeholder="Add a new task"></ion-input>
+    <ion-input
+      [(ngModel)]="newTodo"
+      placeholder="Agregar una nueva tarea"
+    ></ion-input>
     <ion-button (click)="addTodo()">Add</ion-button>
   </ion-item>
-</ion-content>
 
-<ion-list>
-  <ion-item *ngFor="let todo of todos; let i = index">
-    {{ todo }}
-    <ion-button fill="clear" color="danger" (click)="removeTodo(i)">
-      <ion-icon name="trash"></ion-icon>
-    </ion-button>
-  </ion-item>
-</ion-list>
+  <ion-list>
+    <ion-item *ngFor="let todo of todos; let i = index">
+      {{ todo }}
+      <ion-button fill="clear" color="danger" (click)="removeTodo(i)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item *ngFor="let pokemon of rickAndMorty; let i = index">
+      {{pokemon.name}}
+      <ion-avatar slot="end">
+        <img [src]="pokemon.image" />
+      </ion-avatar>
+    </ion-item>
+  </ion-list>
+</ion-content>
